@@ -1,7 +1,5 @@
 #This is a sample Image 
-FROM ubuntu 
-MAINTAINER vin2008vin@gmail.com 
+FROM nginx:alpine
 
-RUN apt-get update 
-RUN apt-get install –y nginx 
-CMD [“echo”,”Image created”] 
+COPY default.conf /etc/nginx/conf.d/
+COPY index.html /usr/share/nginx/html/
